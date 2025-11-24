@@ -3,7 +3,6 @@ import { extension_settings, getContext, loadExtensionSettings } from "../../../
 import { saveSettingsDebounced } from "../../../../script.js";
 
 const extensionName = "big-five-injector";
-const extensionFolderPath = `scripts/extensions/third-party/${extensionName}`;
 let fewshotsData = null; // Will hold the loaded JSON
 
 const defaultSettings = {
@@ -18,7 +17,7 @@ extension_settings[extensionName] = extension_settings[extensionName] || {};
 // Load fewshots data
 async function loadFewshotsData() {
     try {
-        const response = await fetch(`${extensionFolderPath}/big_five_fewshots.json`);
+        const response = await fetch('./big_five_fewshots.json');
         fewshotsData = await response.json();
     } catch (error) {
         console.error('Failed to load big_five_fewshots.json:', error);
@@ -27,10 +26,11 @@ async function loadFewshotsData() {
 
 // Load settings into UI
 function loadSettings() {
-    const settings = extension_settings[extensionName];
+    let settings = extension_settings[extensionName] || {};
     
-    // Ensure defaults
-    Object.assign(settings, defaultSettings);
+    // Ensure defaults without overwriting existing
+    extension_settings[extensionName] = { ...defaultSettings, ...settings };
+    settings = extension_settings[extensionName];
     
     // Update UI
     $('#openness').prop('checked', settings.selectedTraits.includes('Openness'));
@@ -111,11 +111,23 @@ ${examples.join('\n\n')}`;
 jQuery(async () => {
     await loadFewshotsData();
     
-    // Load HTML
-    const settingsHtml = await $.get(`${extensionFolderPath}/settings.html`);
-    $("#extensions_settings").append(settingsHtml);
-    
-    // Event listeners already set above
-    
     loadSettings();
+    
+    // Event listeners
+    $('#openness, #conscientiousness, #extraversion, #agreeableness, #neuroticism').on('change', saveTraits);
+    
+    $('#injection_role').on('change', function() {
+        extension_settings[extensionName].injectionRole = $(this).val();
+        saveSettingsDebounced();
+    });
+    
+    $('#level').on('change', function() {
+        extension_settings[extensionName].level = parseInt($(this).val()) || 2;
+        saveSettingsDebounced();
+    });
+    
+    $('#interval').on('change', function() {
+        extension_settings[extensionName].interval = parseInt($(this).val()) || 5;
+        saveSettingsDebounced();
+    });
 });
