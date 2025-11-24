@@ -1,0 +1,39 @@
+<div class="big-five-extension-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>Big Five Few-Shot Injector</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <div class="big-five-traits flexcol">
+                <h4>Select Traits:</h4>
+                <label><input type="checkbox" id="openness" checked> Openness</label>
+                <label><input type="checkbox" id="conscientiousness" checked> Conscientiousness</label>
+                <label><input type="checkbox" id="extraversion" checked> Extraversion</label>
+                <label><input type="checkbox" id="agreeableness" checked> Agreeableness</label>
+                <label><input type="checkbox" id="neuroticism" checked> Neuroticism</label>
+            </div>
+
+            <div class="big-five-role flexcol">
+                <h4>Injection Role:</h4>
+                <select id="injection_role">
+                    <option value="system">System</option>
+                    <option value="user">User</option>
+                    <option value="assistant">Assistant</option>
+                </select>
+            </div>
+
+            <div class="big-five-level flexcol">
+                <h4>Level (0-4):</h4>
+                <input type="number" id="level" min="0" max="4" value="2">
+            </div>
+
+            <div class="big-five-interval flexcol">
+                <h4>Interval (messages):</h4>
+                <input type="number" id="interval" min="1" value="5">
+            </div>
+
+            <hr class="sysHR" />
+        </div>
+    </div>
+</div>

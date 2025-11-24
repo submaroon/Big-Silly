@@ -1,0 +1,10 @@
+{
+    "display_name": "Big Five Few-Shot Injector",
+    "loading_order": 10,
+    "js": "index.js",
+    "css": "style.css",
+    "author": "Roo",
+    "version": "1.0.0",
+    "homePage": "https://example.com",
+    "generate_interceptor": "bigFiveInterceptor"
+}

@@ -1,0 +1,38 @@
+.big-five-extension-settings {
+    margin-bottom: 1rem;
+}
+
+.big-five-traits, .big-five-role, .big-five-level, .big-five-interval {
+    margin-bottom: 1rem;
+}
+
+.flexcol {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexcol h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9em;
+    color: var(--text-primary);
+}
+
+.flexcol label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25rem;
+    cursor: pointer;
+}
+
+.flexcol input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.flexcol select,
+.flexcol input[type="number"] {
+    padding: 0.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--panel-background);
+    color: var(--text-primary);
+}
