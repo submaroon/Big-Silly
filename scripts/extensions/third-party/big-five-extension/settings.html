@@ -1,0 +1,107 @@
+<div class="big_five_settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>Big Five Personality Injector</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <div class="flex-container flexFlowColumn">
+                <!-- Personality Selection -->
+                <div class="settingsSection">
+                    <label for="big_five_personality"><b>Select Personality Traits:</b></label>
+                    <div class="personality-grid">
+                        <div class="personality-item">
+                            <label>Openness:</label>
+                            <select id="big_five_openness" class="text_pole">
+                                <option value="-1">Not Selected</option>
+                                <option value="0">Level 0 (Closed)</option>
+                                <option value="1">Level 1</option>
+                                <option value="2">Level 2</option>
+                                <option value="3">Level 3</option>
+                                <option value="4">Level 4 (Open)</option>
+                            </select>
+                        </div>
+                        <div class="personality-item">
+                            <label>Conscientiousness:</label>
+                            <select id="big_five_conscientiousness" class="text_pole">
+                                <option value="-1">Not Selected</option>
+                                <option value="0">Level 0 (Spontaneous)</option>
+                                <option value="1">Level 1</option>
+                                <option value="2">Level 2</option>
+                                <option value="3">Level 3</option>
+                                <option value="4">Level 4 (Conscientious)</option>
+                            </select>
+                        </div>
+                        <div class="personality-item">
+                            <label>Extraversion:</label>
+                            <select id="big_five_extraversion" class="text_pole">
+                                <option value="-1">Not Selected</option>
+                                <option value="0">Level 0 (Introverted)</option>
+                                <option value="1">Level 1</option>
+                                <option value="2">Level 2</option>
+                                <option value="3">Level 3</option>
+                                <option value="4">Level 4 (Extraverted)</option>
+                            </select>
+                        </div>
+                        <div class="personality-item">
+                            <label>Agreeableness:</label>
+                            <select id="big_five_agreeableness" class="text_pole">
+                                <option value="-1">Not Selected</option>
+                                <option value="0">Level 0 (Competitive)</option>
+                                <option value="1">Level 1</option>
+                                <option value="2">Level 2</option>
+                                <option value="3">Level 3</option>
+                                <option value="4">Level 4 (Agreeable)</option>
+                            </select>
+                        </div>
+                        <div class="personality-item">
+                            <label>Neuroticism:</label>
+                            <select id="big_five_neuroticism" class="text_pole">
+                                <option value="-1">Not Selected</option>
+                                <option value="0">Level 0 (Emotional)</option>
+                                <option value="1">Level 1</option>
+                                <option value="2">Level 2</option>
+                                <option value="3">Level 3</option>
+                                <option value="4">Level 4 (Stable)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Injection Settings -->
+                <div class="settingsSection">
+                    <div class="flex-container flexFlowColumn">
+                        <div class="setting-item">
+                            <label for="big_five_injection_source"><b>Injection Source:</b></label>
+                            <select id="big_five_injection_source" class="text_pole">
+                                <option value="system">System</option>
+                                <option value="user">User</option>
+                                <option value="assistant">Assistant</option>
+                            </select>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <label for="big_five_injection_depth"><b>Injection Depth (number of responses):</b></label>
+                            <input type="number" id="big_five_injection_depth" class="text_pole" min="1" max="10" value="5">
+                        </div>
+                        
+                        <div class="setting-item">
+                            <label for="big_five_message_interval"><b>Inject every N messages:</b></label>
+                            <input type="number" id="big_five_message_interval" class="text_pole" min="1" max="20" value="1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enable/Disable -->
+                <div class="settingsSection">
+                    <div class="flex-container flexFlowColumn">
+                        <label class="checkbox_label">
+                            <input id="big_five_enabled" type="checkbox" checked>
+                            <span>Enable Big Five Personality Injection</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
