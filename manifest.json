@@ -3,6 +3,7 @@
     "loading_order": 10,
     "js": "index.js",
     "css": "style.css",
+    "html": "settings.html",
     "author": "Roo",
     "version": "1.0.0",
     "homePage": "https://example.com",
