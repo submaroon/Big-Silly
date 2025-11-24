@@ -1,0 +1,11 @@
+{
+  "name": "Big Five Fewshots Injector",
+  "id": "bigfive-fewshots",
+  "version": "0.1.0",
+  "author": "YourName",
+  "description": "Inject randomized Big Five few-shots into outgoing user messages.",
+  "entry": "index.js",
+  "settings": {
+    "panel": true
+  }
+}
